@@ -27,6 +27,25 @@ app.use('/general', generalRoutes);
 app.use('/management', managementRoutes);
 app.use('/sales', salesRoutes);
 
+
+//imports for data 
+import User from './models/User.js';
+import Product from './models/Product.js';
+import ProductStat from './models/ProductStat.js';
+import Transaction from './models/Transaction.js'
+import OverallStat from './models/OverallStat.js';
+import AffiliateStat from './models/AffiliateStat.js';
+import {
+    dataUser,
+    dataProduct,
+    dataProductStat,
+    dataTransaction,
+    dataOverallStat,
+    dataAffiliateStat,
+} from './data/data.js';
+
+
+
 //mongoose setup
 // if the port in the env does not work use 9000 as the backup
 const PORT = process.env.PORT || 9000;
