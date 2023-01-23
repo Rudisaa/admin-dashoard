@@ -1,11 +1,9 @@
-import { CssBaseline, CSSBaseLine, ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
-import { useMemo } from 'react';
+import { useMemo} from 'react';
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { themeSettings } from './theme';
-
-
-
 
 
 function App() {
@@ -17,9 +15,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <ThemeProvider theme={ theme }> 
-        <CSSBaseLine />
+        <CssBaseline />
         <Route element={<Layout />}>
-          
+
         </Route>
         </ThemeProvider>
       </BrowserRouter>
