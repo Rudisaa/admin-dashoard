@@ -10,6 +10,22 @@ import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
+//imports for data 
+import User from './models/User.js';
+import Product from './models/Product.js';
+import ProductStat from './models/ProductStat.js';
+import Transaction from './models/Transaction.js'
+import OverallStat from './models/OverallStat.js';
+import AffiliateStat from './models/AffiliateStat.js';
+import {
+    dataUser,
+    dataProduct,
+    dataProductStat,
+    dataTransaction,
+    dataOverallStat,
+    dataAffiliateStat,
+} from './data/data.js';
+
 
 //configuration
 dotenv.config
@@ -28,21 +44,7 @@ app.use('/management', managementRoutes);
 app.use('/sales', salesRoutes);
 
 
-//imports for data 
-import User from './models/User.js';
-import Product from './models/Product.js';
-import ProductStat from './models/ProductStat.js';
-import Transaction from './models/Transaction.js'
-import OverallStat from './models/OverallStat.js';
-import AffiliateStat from './models/AffiliateStat.js';
-import {
-    dataUser,
-    dataProduct,
-    dataProductStat,
-    dataTransaction,
-    dataOverallStat,
-    dataAffiliateStat,
-} from './data/data.js';
+
 
 
 
@@ -55,7 +57,7 @@ mongoose.connect(process.env.MONGO_URL, {
 }).then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-    // I added the data and then comment it out so it doesnt add it twice
+    // I added the data and then commented it out so it doesnt add it twice
     AffiliateStat.insertMany(dataAffiliateStat);
     OverallStat.insertMany(dataOverallStat);
     Product.insertMany(dataProduct);
