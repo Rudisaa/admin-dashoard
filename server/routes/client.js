@@ -11,6 +11,6 @@ const router = express.Router();
 router.get('/products', getProducts);
 router.get('/customers', getCustomers);
 router.get('/transactions', getTransaction);
-router.getr('/geography', getGeography);
+router.get('/geography', getGeography);
 
 export default router;
