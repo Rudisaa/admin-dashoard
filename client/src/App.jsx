@@ -4,6 +4,7 @@ import { useMemo} from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { themeSettings } from './theme';
+import Layout from './pages/layout';
 
 
 function App() {
@@ -16,9 +17,11 @@ function App() {
       <BrowserRouter>
         <ThemeProvider theme={ theme }> 
         <CssBaseline />
-        <Route element={<Layout />}>
+        <Routes>
+          <Route element={<Layout />}>
 
-        </Route>
+          </Route>
+        </Routes>
         </ThemeProvider>
       </BrowserRouter>
     </div>
