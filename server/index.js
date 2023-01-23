@@ -22,7 +22,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 //routes -- react pages
-
+app.use('/client', clientRoutes);
+app.use('/general', generalRoutes);
+app.use('/management', managementRoutes);
+app.use('/sales', salesRoutes);
 
 //mongoose setup
 // if the port in the env does not work use 9000 as the backup
