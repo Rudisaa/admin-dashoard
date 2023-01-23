@@ -42,7 +42,7 @@ export const getCustomers = async (req, res) => {
         res.status(200).json(customers);
 
     } catch(error) {
-        res.status(404).json({ message: error.message };)
+        res.status(404).json({ message: error.message })
     }
 
 };
