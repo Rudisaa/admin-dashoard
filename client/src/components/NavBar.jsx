@@ -25,7 +25,7 @@ const NavBar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
     const theme = useTheme();
 
     const [anchorEl, SetAnchorEl] = useState(null);
-    //const isOpen = boolean(anchorEl);
+    const isOpen = Boolean(anchorEl);
 
     const handleClick = (event) => SetAnchorEl(event.currentTarget);
     const handleClose = () => SetAnchorEl(null);
@@ -36,7 +36,7 @@ const NavBar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
         <Toolbar sx={{justifyContent: 'space-between'}}> 
         {/* left side of the nav bar */}
             <FlexBox>
-                <IconButton onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
+                <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                     <MenuIcon />
                 </IconButton>
                 <FlexBox 
@@ -74,19 +74,19 @@ const NavBar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                             <Typography 
                                 fontWeight='bold' 
                                 fontSize='0.9rem'
-                                sx={{ color: theme.palette.primary['grey'] }}
-                            >
-                             
-                            </Typography>
-                            <Typography
-                                fontSize='0.8rem'
-                                sx={{ color: theme.palette.primary['grey']}}
+                                sx={{ color: theme.palette.primary['color'] }}
                             >
                                 
                             </Typography>
+                            <Typography
+                                fontSize='0.8rem'
+                                sx={{ color: theme.palette.primary['color']}}
+                            >
+                               
+                            </Typography>
                             <ArrowDropDownOutlined 
                                 sx={{ 
-                                    color: theme.palette.primary['grey'],
+                                    color: theme.palette.primary['color'],
                                     fontSize: '25px',
                                 }}
                             />
