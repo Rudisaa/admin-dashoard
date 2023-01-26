@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { themeSettings } from './theme';
 import Layout from './pages/layout';
+import NavBar from './components/NavBar';
 
 
 function App() {
@@ -14,10 +15,13 @@ function App() {
 
   return (
     <div className="App">
+       <NavBar/>
       <BrowserRouter>
+     
         <ThemeProvider theme={ theme }> 
         <CssBaseline />
         <Routes>
+          
           <Route element={<Layout />}>
 
           </Route>
