@@ -16,7 +16,6 @@ function App() {
 
   return (
     <div className="App">
-       <NavBar/>
       <BrowserRouter>
      
         <ThemeProvider theme={ theme }> 
@@ -25,7 +24,7 @@ function App() {
           
           <Route element={<Layout />}>
             <Route path='/' element={ <Navigate to ='/dashboard' replace /> } />
-            <Route path='/dashboard' elemen={ <Dashboard / > } />
+            <Route path='/dashboard' element={ <Dashboard / > } />
 
           </Route>
         </Routes>
