@@ -3,6 +3,7 @@ import NavBar from '../../components/NavBar';
 import { Box, useMediaQuery } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useGetUserQuery } from '../../state/api';
 
 
 
@@ -12,6 +13,7 @@ const Layout = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
   const userId = useSelector((state) => state.global.userId);
   const { data } = useGetUserQuery(userId);
+  console.log('this is the data: ', data);
 
 
   return (
