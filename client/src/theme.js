@@ -18,25 +18,6 @@ export const themeColors = {
     }
 }
 
-
-const themeChange = (themeColors) => {
-    const themeChange = {};
-
-    Object.entries(themeColors).forEach(([key, val]) => {
-        const keys = Object.keys(val);
-        const values = Object.values(val);
-        const length = keys.length;
-        const change = {};
-        for(let i = 0; i < length; i++) {
-            change[keys[i]] = values[length - i -1];
-        }
-        themeChange[key] = change;
-    });
-    return themeChange;
-}
-
-export const lightMode = themeChange(themeColors);
-
 export const themeSettings = (mode) => {
     return {
         palette: {
@@ -45,8 +26,8 @@ export const themeSettings = (mode) => {
             { 
                 primary: {
                     ...themeColors.darkTheme,
-                    main: themeColors.darkTheme['primary'],
-                    light: themeColors.darkTheme['primary'],
+                    main: themeColors.darkTheme['color'],
+                    light: themeColors.darkTheme['color'],
                 },
                 secondary: {
                     ...themeColors.lightTheme,
@@ -57,7 +38,7 @@ export const themeSettings = (mode) => {
                     main: themeColors.darkTheme['neutral'],
                 },
                 background: {
-                    default: themeColors.darkTheme['background'],
+                    default: themeColors.darkTheme['background'],  
                     alt: themeColors.darkTheme['neutral'],
                 },
             } : {
